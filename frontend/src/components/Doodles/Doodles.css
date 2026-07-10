@@ -1,0 +1,15 @@
+.doodle {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .doodle {
+    width: 100px;
+    height: 100px;
+  }
+}

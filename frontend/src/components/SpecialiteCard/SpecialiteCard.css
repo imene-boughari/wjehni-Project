@@ -1,0 +1,68 @@
+.specialite-card {
+  background: #fff;
+  border: 1px solid #ece7f5;
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: right;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.specialite-card:hover {
+  box-shadow: 0 8px 24px rgba(78, 0, 94, 0.08);
+  transform: translateY(-2px);
+}
+
+.specialite-card__badge {
+  align-self: flex-start;
+  background: #e4f6fc;
+  color: var(--c-blue, #36c5f0);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.specialite-card__title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1c1330;
+  margin: 2px 0 0;
+}
+
+.specialite-card__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6f6b7d;
+}
+
+.specialite-card__icon {
+  flex-shrink: 0;
+  color: #9b96ab;
+}
+
+.specialite-card__note {
+  color: #a79fbb;
+  font-size: 12.5px;
+}
+
+.specialite-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f1eef7;
+  margin-top: 8px;
+  padding-top: 14px;
+  font-size: 13px;
+  color: #6f6b7d;
+}
+
+.specialite-card__score {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--c-primary-dark, #4e005e);
+}

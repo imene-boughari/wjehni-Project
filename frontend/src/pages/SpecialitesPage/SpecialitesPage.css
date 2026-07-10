@@ -1,0 +1,131 @@
+.specialites-page {
+  direction: rtl;
+  min-height: 100vh;
+  padding: 32px 48px 60px;
+  position: relative;
+
+  /* Couleur violette claire de secours + votre image bg-pattern en fond. */
+  background-color: #f3e9fb;
+  background-image: url("../../assets/images/bg-pattern.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.specialites-page__card {
+  position: relative;
+  background: #fff;
+  border-radius: 26px;
+  padding: 34px 38px;
+  box-shadow: 0 12px 34px rgba(78, 0, 94, 0.08);
+}
+
+/* --- Image décorative (Subtract-jaune.png), en haut à gauche de la card --- */
+.specialites-page__page-curl {
+  position: absolute;
+  top: -14px;
+  left: -6px;
+  width: 30px;
+  height: auto;
+  transform: rotate(8deg);
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.18));
+}
+
+.specialites-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.specialites-page__heading {
+  text-align: right;
+  max-width: 760px;
+}
+
+.specialites-page__heading h1 {
+  font-family: var(--font-headline);
+  font-size: 26px;
+  font-weight: 800;
+  color: #1c1330;
+  margin: 0 0 10px;
+}
+
+.specialites-page__heading p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: #6f6b7d;
+  margin: 0;
+}
+
+.specialites-page__reset-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f7f4fb;
+  border: 1px solid #e6e1ef;
+  color: var(--c-primary-dark, #4e005e);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.specialites-page__reset-btn:hover {
+  background: #f1eef7;
+}
+
+/* --- Zone de la grille : accent bleu flottant en haut à droite --- */
+.specialites-page__grid-wrap {
+  position: relative;
+}
+
+.specialites-page__doodle {
+  position: absolute;
+  height: auto;
+  opacity: 0.9;
+}
+
+.specialites-page__doodle--blue {
+  top: -30px;
+  left: 1150px;
+  width: 30px;
+  transform: rotate(12deg);
+}
+
+.specialites-page__doodle--red {
+  position: static;
+  width: 30px;
+  transform: rotate(20deg);
+}
+
+.specialites-page__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 48px;
+  color: #9c96ab;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .specialites-page {
+    padding: 20px;
+    background-image: url("../../assets/images/Group_14.png");
+  }
+
+  .specialites-page__card {
+    padding: 24px;
+  }
+
+  .specialites-page__header {
+    flex-direction: column;
+  }
+}

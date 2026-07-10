@@ -1,0 +1,27 @@
+/* ============================================================
+   PALETTE GLOBALE — reprise du guide "Visual Identity"
+   À importer UNE SEULE FOIS, dans main.jsx ou en haut de index.css :
+      import "./styles/variables.css";
+   ============================================================ */
+:root {
+  --c-primary-dark: #4e005e;
+  --c-primary-light: #d17dfe;
+  --c-violet: #c86ff2;
+  --c-black: #000000;
+  --c-white: #ffffff;
+  --c-red: #f00000;
+  --c-orange: #fcb835;
+  --c-blue: #36c5f0;
+  --c-green: #2eb67d;
+
+  --c-bg-page: #f8f2fb;
+  --c-text-muted: #7a7186;
+  --c-border-soft: #ece3f2;
+
+  --font-headline: "Segoe UI", "Naskh UT", Tahoma, Arial, sans-serif;
+  --font-body: "Roboto", "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

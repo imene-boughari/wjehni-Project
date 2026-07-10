@@ -1,0 +1,59 @@
+.home-confirm-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 13px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.home-confirm-button:hover {
+  transform: translateY(-2px);
+}
+
+.home-confirm-button:active {
+  transform: translateY(0);
+}
+
+.home-confirm-button__arrow {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Variante principale : fond violet plein */
+.home-confirm-button--primary {
+  background: var(--color-purple-900);
+  color: var(--color-white);
+  box-shadow: 0 8px 20px rgba(76, 29, 119, 0.25);
+}
+
+.home-confirm-button--primary:hover {
+  background: #380335;
+}
+
+/* Variante contour : fond blanc, texte violet */
+.home-confirm-button--outline {
+  background: var(--color-white);
+  color: var(--color-purple-900);
+  border: 1px solid rgba(76, 29, 119, 0.15);
+}
+
+.home-confirm-button--outline:hover {
+  background: var(--color-purple-100);
+}
+
+/* Variante sur fond sombre : bouton orange (bandeau CTA violet) */
+.home-confirm-button--onDark {
+  background: var(--color-orange);
+  color: var(--color-purple-900);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.home-confirm-button--onDark:hover {
+  background: #e0961f;
+}

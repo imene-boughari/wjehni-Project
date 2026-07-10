@@ -1,0 +1,6 @@
+.notes-form__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}

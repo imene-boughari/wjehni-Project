@@ -1,0 +1,134 @@
+.subject-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--c-badge-bg, #f1ebf3);
+  color: var(--c-primary-dark);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  margin: 0 0 18px auto;
+  width: fit-content;
+}
+
+.subject-badge__icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.subject-badge__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.notes-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+/* -------- image décorative en bas à gauche (desktop + mobile) -------- */
+.page__deco-rectangle {
+  position: absolute;
+  bottom: 24px;
+  left: 20px;
+  width: 90px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.notes-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 13px 22px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.notes-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.notes-btn:active {
+  transform: scale(0.97);
+}
+
+.notes-btn--ghost {
+  background: var(--c-white);
+  color: var(--c-primary-dark);
+  border: 1.5px solid var(--c-border-soft);
+}
+
+.notes-btn--ghost:hover {
+  background: #faf6fb;
+}
+
+.notes-btn--primary {
+  background: var(--c-primary-dark);
+  color: var(--c-white);
+  flex: 1;
+  justify-content: center;
+}
+
+.notes-btn--primary:hover:not(:disabled) {
+  background: #3d0349;
+}
+
+.notes-btn--primary:disabled {
+  background: var(--c-primary-dark);
+  opacity: 0.35;
+  color: var(--c-white);
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .page__deco-rectangle {
+    width: 55px;
+    bottom: 14px;
+    left: 10px;
+  }
+
+  .subject-badge {
+    font-size: 12px;
+    padding: 4px 10px 4px 4px;
+    margin-bottom: 14px;
+  }
+
+  .subject-badge__icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    padding: 5px;
+  }
+
+  .notes-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .notes-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 14px;
+    font-size: 12.5px;
+  }
+}

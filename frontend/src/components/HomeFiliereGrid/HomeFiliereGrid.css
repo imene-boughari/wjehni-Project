@@ -1,0 +1,100 @@
+.home-domaines-section {
+  padding: 40px 0 80px;
+  position: relative;
+}
+
+.home-domaines-section__arrow {
+  position: absolute;
+  bottom: 20px;
+  left: 40px;
+  width: 30px;
+  height: auto;
+  pointer-events: none;
+}
+
+.home-domaines-section__title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-purple-900);
+  margin-bottom: 10px;
+}
+
+.home-domaines-section__subtitle {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 15px;
+  margin-bottom: 40px;
+}
+
+.home-domaines-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.home-domaine-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 20px 24px;
+}
+
+.home-domaine-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.home-domaine-card__label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.home-domaine-card__icon--blue { background: var(--color-blue-100); color: var(--color-blue); }
+.home-domaine-card__icon--red { background: var(--color-red-100); color: var(--color-red); }
+.home-domaine-card__icon--teal { background: #E4F7F3; color: #16A085; }
+.home-domaine-card__icon--purple { background: #F1E9FB; color: var(--color-purple-600); }
+.home-domaine-card__icon--violet { background: #F3EAFB; color: var(--color-purple-700); }
+.home-domaine-card__icon--orange { background: var(--color-orange-100); color: var(--color-orange); }
+.home-domaine-card__icon--green { background: var(--color-green-100); color: var(--color-green); }
+.home-domaine-card__icon--skyblue { background: #E5F3FE; color: #2E9BF0; }
+
+@media (max-width: 700px) {
+  .home-domaines-section {
+    padding: 24px 0 56px;
+  }
+
+  .home-domaines-section__title {
+    font-size: 22px;
+  }
+
+  .home-domaines-section__subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .home-domaines-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .home-domaine-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 16px 12px;
+  }
+
+  .home-domaine-card__label {
+    font-size: 13px;
+  }
+}

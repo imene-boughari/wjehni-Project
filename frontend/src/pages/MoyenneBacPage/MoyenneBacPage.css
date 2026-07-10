@@ -1,0 +1,281 @@
+.mb-page .footer-note {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* -------- flèches décoratives sur le côté droit -------- */
+.page__side-arrow {
+  position: absolute;
+  right: 18px;
+  height: auto;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.page__side-arrow--red {
+  width: 26px;
+  top: 50%;
+  transform: rotate(-8deg);
+}
+
+.page__side-arrow--white {
+  width: 20px;
+  top: calc(50% - 26px);
+  transform: rotate(4deg);
+}
+
+.subject-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--c-badge-bg, #f1ebf3);
+  color: var(--c-primary-dark);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  margin: 0 0 18px auto;
+  width: fit-content;
+}
+
+.subject-badge__icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.subject-badge__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* -------- images décoratives (visuel uniquement) -------- */
+.page__deco-yellow {
+  position: absolute;
+  top: 70px;
+  left: 16px;
+  width: 46px;
+  height: auto;
+  pointer-events: none;
+  z-index: 6;
+}
+
+.page__deco-blue {
+  position: absolute;
+  bottom: 88px;
+  right: 24px;
+  width: 40px;
+  height: auto;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.moyenne-input-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  background: #fbfafc;
+  border: 1.5px solid var(--c-border-soft);
+  border-radius: 14px;
+  padding: 18px 24px;
+  max-width: 300px;
+  margin: 0 auto 28px;
+}
+
+.moyenne-input-suffix {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-text-muted);
+}
+
+.moyenne-input {
+  width: 150px;
+  border: none;
+  background: transparent;
+  outline: none;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--c-text-muted);
+  font-family: var(--font-body);
+  direction: ltr;
+}
+
+.moyenne-input::placeholder {
+  color: var(--c-text-muted);
+  opacity: 1;
+}
+
+.moyenne-input::-webkit-outer-spin-button,
+.moyenne-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.moyenne-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.moyenne-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  font-family: var(--font-headline);
+  font-weight: 800;
+  font-size: 14px;
+  padding: 13px 22px;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+
+.moyenne-btn svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.moyenne-btn:active {
+  transform: scale(0.97);
+}
+
+.moyenne-btn--ghost {
+  background: var(--c-white);
+  color: var(--c-primary-dark);
+  border: 1.5px solid var(--c-border-soft);
+}
+
+.moyenne-btn--ghost:hover {
+  background: #faf6fb;
+}
+
+.moyenne-btn--primary {
+  background: var(--c-primary-dark);
+  color: var(--c-white);
+  flex: 1;
+  justify-content: center;
+}
+
+.moyenne-btn--primary:hover:not(:disabled) {
+  background: #3d0349;
+}
+
+.moyenne-btn--primary:disabled {
+  background: var(--c-primary-dark);
+  opacity: 0.35;
+  color: var(--c-white);
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .moyenne-input-wrap {
+    padding: 14px 20px;
+    margin-bottom: 20px;
+  }
+
+  .moyenne-input {
+    font-size: 32px;
+    width: 110px;
+  }
+
+  .moyenne-actions {
+    gap: 10px;
+  }
+
+  .moyenne-btn {
+    padding: 11px 14px;
+    font-size: 12.5px;
+  }
+
+  .subject-badge {
+    font-size: 12px;
+    padding: 4px 10px 4px 4px;
+    margin-bottom: 14px;
+  }
+
+  .subject-badge__icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    padding: 5px;
+  }
+
+  .page__deco-yellow {
+    width: 30px;
+    top: px;
+    left: 8px;
+  }
+
+  .page__deco-blue {
+    width: 26px;
+    bottom: 90px;
+    right: 20px;
+  }
+
+  /* -------- la carte remplit tout l'espace jusqu'en bas -------- */
+  .mb-page .content {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 64px); /* 64px ≈ hauteur du header mobile */
+  }
+
+  .mb-page .card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mb-page .card__title {
+    margin-bottom: 0;
+  }
+
+  .mb-page .card__subtitle {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  .mb-page .moyenne-input-wrap {
+    margin: 0 auto;
+  }
+
+  .mb-page .moyenne-actions {
+    margin: 0;
+  }
+
+  .mb-page .footer-note {
+    margin-bottom: 8px;
+  }
+
+  .page__side-arrow--red {
+    width: 18px;
+    right: 10px;
+  }
+
+  .page__side-arrow--white {
+    width: 14px;
+    right: 10px;
+  }
+
+  /* -------- les deux boutons l'un sous l'autre -------- */
+  .moyenne-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .moyenne-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

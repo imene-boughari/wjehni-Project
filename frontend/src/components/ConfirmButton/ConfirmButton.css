@@ -1,0 +1,41 @@
+.confirm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 999px;
+  font-family: var(--font-headline);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--c-white);
+  cursor: not-allowed;
+  background: var(--c-primary-dark);
+  opacity: 0.35;
+  transition: background 0.2s ease, opacity 0.2s ease, cursor 0.2s ease;
+}
+
+.confirm-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.confirm-btn:not(:disabled) {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.confirm-btn:not(:disabled):hover {
+  background: #3b0049;
+}
+
+@media (max-width: 640px) {
+  .confirm-btn {
+    font-size: 13px;
+    padding: 11px 18px;
+  }
+}

@@ -1,0 +1,26 @@
+.footer-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.footer-note__dash {
+  width: 100%;
+  max-width: 900px;
+  border-top: 1px dashed var(--c-border-soft);
+}
+
+.footer-note__text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--c-text-muted);
+  font-size: 14px;
+}
+
+.footer-note__text svg {
+  width: 18px;
+  height: 18px;
+}

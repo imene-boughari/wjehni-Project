@@ -1,0 +1,100 @@
+.home-stepper {
+  position: relative;
+  padding: 72px 0;
+}
+
+.home-stepper__eyebrow {
+  text-align: center;
+  color: #D17DFE;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.home-stepper__title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-purple-900);
+  margin-bottom: 90px;
+}
+
+.home-stepper__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.home-step-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 32px 28px;
+  text-align: center;
+  position: relative;
+}
+
+.home-step-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.home-step-card__icon--blue {
+  background: var(--color-blue-100);
+  color: var(--color-blue);
+}
+
+.home-step-card__icon--orange {
+  background: var(--color-orange-100);
+  color: var(--color-orange);
+}
+
+.home-step-card__icon--green {
+  background: var(--color-green-100);
+  color: var(--color-green);
+}
+
+.home-step-card__number {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.home-step-card__title {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.home-step-card__text {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .home-stepper {
+    padding: 40px 0;
+  }
+
+  .home-stepper__title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+
+  .home-stepper__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .home-step-card {
+    padding: 24px 20px;
+  }
+}

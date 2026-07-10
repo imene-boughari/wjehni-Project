@@ -1,0 +1,70 @@
+/* Tokens de design propres a la page d'accueil.
+   Scopes sur .home (pas sur :root) pour ne jamais entrer en conflit
+   avec les variables CSS globales deja definies dans ton variables.css existant. */
+.home {
+  --color-purple-900: #4E045E;
+  --color-purple-700: #4C1D77;
+  --color-purple-600: #D17DFE;
+  --color-purple-500: #8B3FC4;
+  --color-purple-100: #F3EAFB;
+  --color-purple-50: #FAF6FE;
+
+  --color-orange: #F5A524;
+  --color-orange-100: #FEF3DD;
+
+  --color-green: #22B573;
+  --color-green-100: #E3F8ED;
+
+  --color-blue: #2E9BF0;
+  --color-blue-100: #E5F3FE;
+
+  --color-red: #F0524C;
+  --color-red-100: #FDE9E8;
+
+  --color-text-dark: #221336;
+  --color-text-muted: #5B4A63;
+  --color-white: #FFFFFF;
+
+  --font-display: "Cairo", "Tajawal", sans-serif;
+  --font-body: "Tajawal", "Cairo", sans-serif;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --shadow-card: 0 10px 30px rgba(76, 29, 119, 0.08);
+
+  --max-width: 1280px;
+}
+
+/* La classe .container est reutilisee par tous les composants Home*
+   (HomeNavbar, HomeFooter, etc.). Si tu as deja une classe .container
+   globale ailleurs, renomme-la ici en .home-container et mets a jour
+   les fichiers HomeNavbar.jsx / HomeFooter.jsx / Home*.jsx en consequence. */
+.home .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@media (max-width: 768px) {
+  .home .container {
+    padding: 0 20px;
+  }
+}
+
+.home {
+  direction: rtl;
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background: var(--color-purple-50);
+}
+
+.home h1, .home h2, .home h3, .home h4 {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.home button {
+  font-family: inherit;
+  cursor: pointer;
+}
