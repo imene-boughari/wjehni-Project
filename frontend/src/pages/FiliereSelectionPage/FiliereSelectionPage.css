@@ -138,9 +138,8 @@
     font-size: 12px;
     padding: 11px 14px;
   }
-}
 
-
+  .page__bg--desktop {
     display: none;
   }
 
