@@ -1,9 +1,12 @@
 import { useMemo, useState } from "react";
+import useSWR from "swr";
 import Navbar from "../../components/Navbar/Navbar";
 import FilterBar from "../../components/FilterBar/FilterBar";
 import SpecialiteGrid from "../../components/SpecialiteGrid/SpecialiteGrid";
 import { ResetIcon, CapIcon } from "../../components/icons";
-import { MOCK_FILIERES } from "../../data/mockFilieres";
+import { fetcher } from "../../lib/fetcher";
+import { getSpecialitiesUrl } from "../../hooks/useSpecialities";
+import { buildApiFilters, mapSpecialityToFiliere } from "../../data/subjectsConfig";
 import jauneDoodle from "../../assets/images/Subtract-jaune.png";
 import bleuDoodle from "../../assets/images/Rectangle-bleu.png";
 import rougeDoodle from "../../assets/images/Rectangle.png";
@@ -16,11 +19,27 @@ const INITIAL_FILTERS = {
   domains: [],
 };
 
-// onEditData: callback fourni par le routeur pour revenir a la page de
-// selection de filiere ("تعديل معطياتي"). filieres: donnees venant de l'API,
-// a defaut on utilise MOCK_FILIERES pour le developpement.
-export default function SpecialitesPage({ onEditData, filieres = MOCK_FILIERES }) {
+// onEditData: callback pour revenir à la sélection de filière.
+// filiereKey / moyenneBac / notesEssentielles : réponses de l'utilisateur,
+// transmises par App.jsx, servant à construire la requête API.
+export default function SpecialitesPage({
+  onEditData,
+  filiereKey,
+  moyenneBac,
+  notesEssentielles,
+}) {
   const [filters, setFilters] = useState(INITIAL_FILTERS);
+
+  const apiFilters = buildApiFilters(filiereKey, moyenneBac, notesEssentielles);
+  const { data, error, isLoading } = useSWR(
+    getSpecialitiesUrl(apiFilters),
+    fetcher
+  );
+
+  const filieres = useMemo(() => {
+    if (!data) return [];
+    return data.map(mapSpecialityToFiliere);
+  }, [data]);
 
   const filteredFilieres = useMemo(() => {
     let result = [...filieres];
@@ -93,7 +112,11 @@ export default function SpecialitesPage({ onEditData, filieres = MOCK_FILIERES }
             alt=""
             className="specialites-page__doodle specialites-page__doodle--blue"
           />
-          <SpecialiteGrid filieres={filteredFilieres} />
+          {isLoading && <p>جارٍ التحميل...</p>}
+          {error && <p>حدث خطأ أثناء تحميل البيانات</p>}
+          {!isLoading && !error && (
+            <SpecialiteGrid filieres={filteredFilieres} />
+          )}
         </div>
 
         <footer className="specialites-page__footer">

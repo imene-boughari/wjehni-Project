@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./styles/variables.css"; // palette globale — à garder importé une seule fois ici
+import "./styles/variables.css";
 import Home from "./pages/Home/Home";
 import FiliereSelectionPage from "./pages/FiliereSelectionPage/FiliereSelectionPage";
 import MoyenneBacPage from "./pages/MoyenneBacPage/MoyenneBacPage";
@@ -55,17 +55,18 @@ function App() {
         onNext={(notes) => {
           setNotesEssentielles(notes);
           setStep(4);
-          // TODO: étape 4 — résultat / calcul du moyen pondéré
         }}
       />
     );
   }
 
-  // Étape 4 : affichage des spécialités disponibles selon les données saisies.
-  // TODO: remplacer MOCK_FILIERES (utilisé par défaut dans SpecialitesPage)
-  // par un appel API construit à partir de subjectItem / moyenne / notesEssentielles.
   return (
-    <SpecialitesPage onEditData={() => setStep(1)} />
+    <SpecialitesPage
+      onEditData={() => setStep(1)}
+      filiereKey={filiereId}
+      moyenneBac={moyenne}
+      notesEssentielles={notesEssentielles}
+    />
   );
 }
 
