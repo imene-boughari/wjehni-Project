@@ -14,7 +14,7 @@ function toLatinDigits(str) {
   return str
     .replace(/[٠-٩]/g, (d) => arabicIndic.indexOf(d))
     .replace(/[۰-۹]/g, (d) => extendedArabicIndic.indexOf(d))
-    .replace(/[،٫]/g, "."); // virgule arabe -> point décimal
+    .replace(/[،٫,]/g, "."); // virgule arabe/latine -> point décimal
 }
 
 export default function SubjectInput({ label, value, onChange, error, hint }) {
