@@ -15,7 +15,7 @@ export const WILAYAS = [
   { code: "13", name: "تلمسان" },
   { code: "14", name: "تيارت" },
   { code: "15", name: "تيزي وزو" },
-  { code: "16", name: "الجزائر" },
+  { code: "16", name: "الجزائر العاصمة" },
   { code: "17", name: "الجلفة" },
   { code: "18", name: "جيجل" },
   { code: "19", name: "سطيف" },
@@ -59,3 +59,38 @@ export const WILAYAS = [
   { code: "57", name: "المغير" },
   { code: "58", name: "المنيعة" },
 ];
+
+// Option spéciale (pas une vraie wilaya) : certaines spécialités/écoles
+// nationales ne sont pas rattachées à une wilaya précise, l'inscription
+// se fait au niveau national ("تسجيل وطني").
+export const NATIONAL_REGISTRATION_CODE = "NAT";
+export const NATIONAL_REGISTRATION = {
+  code: NATIONAL_REGISTRATION_CODE,
+  name: "تسجيل وطني",
+};
+
+// Liste complète utilisée par le filtre UI : les 58 wilayas + l'option nationale.
+export const WILAYA_FILTER_OPTIONS = [...WILAYAS, NATIONAL_REGISTRATION];
+
+// Alias connus : certaines sources (API/DB) utilisent des variantes du nom
+// officiel. On les fait pointer vers le bon code pour éviter tout filtre cassé.
+const WILAYA_ALIASES = {
+  "الجزائر": "16",
+  "الجزائر العاصمة": "16",
+  "تسجيل وطني": NATIONAL_REGISTRATION_CODE,
+};
+
+/**
+ * Retourne le code wilaya (ex: "16") à partir d'un nom, en tolérant
+ * les variantes connues (alias) et les espaces superflus.
+ * Renvoie null si aucun match trouvé.
+ */
+export function getWilayaCodeByName(name) {
+  if (!name) return null;
+  const clean = name.trim();
+
+  if (WILAYA_ALIASES[clean]) return WILAYA_ALIASES[clean];
+
+  const found = WILAYAS.find((w) => w.name === clean);
+  return found ? found.code : null;
+}

@@ -1,7 +1,7 @@
 import SearchInput from "./SearchInput";
 import SortDropdown from "./SortDropdown";
 import MultiSelectDropdown from "./MultiSelectDropdown";
-import { WILAYAS } from "../../constants/wilayas";
+import { WILAYA_FILTER_OPTIONS } from "../../constants/wilayas";
 import { DOMAIN_LIST } from "../../constants/domains";
 import "./FilterBar.css";
 
@@ -10,7 +10,7 @@ const SORT_OPTIONS = [
   { value: "score_asc", label: "الأدنى معدلاً أولاً" },
 ];
 
-const WILAYA_ITEMS = WILAYAS.map((w) => ({ value: w.code, label: w.name }));
+const WILAYA_ITEMS = WILAYA_FILTER_OPTIONS.map((w) => ({ value: w.code, label: w.name }));
 const DOMAIN_ITEMS = DOMAIN_LIST.map((d) => ({ value: d.code, label: d.label }));
 
 // filters shape: { query: string, sort: string, wilayas: string[], domains: string[] }

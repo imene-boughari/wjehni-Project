@@ -1,4 +1,4 @@
-import { WILAYAS } from "../constants/wilayas";
+import { getWilayaCodeByName } from "../constants/wilayas";
 import { DOMAINS } from "../constants/domains";
 /**
  * subjectsConfig.js
@@ -83,7 +83,7 @@ export const FILIERES_SUBJECTS = {
 // ---------------------------------------------------------------------------
 
 // Correspondance entre l'id de filière (frontend) et le libellé attendu par l'API
-const FILIERE_BAC_LABELS = {
+export const FILIERE_BAC_LABELS = {
   math: "رياضيات",
   "tech-math": "تقني رياضي",
   sciences: "علوم تجريبية",
@@ -169,11 +169,8 @@ export function buildApiFilters(filiereKey, moyenneBac, notes) {
   }
 }
 
-// Table de correspondance nom de wilaya (arabe) -> code officiel ("01", "02"...)
-const WILAYA_NAME_TO_CODE = WILAYAS.reduce((acc, w) => {
-  acc[w.name] = w.code;
-  return acc;
-}, {});
+// (résolution nom -> code désormais gérée par getWilayaCodeByName, cf. constants/wilayas.js,
+// qui tolère les variantes connues comme "الجزائر" / "الجزائر العاصمة")
 
 // Table de correspondance libellé de domaine (arabe) -> code ("SHS", "SNV"...)
 const DOMAIN_LABEL_TO_CODE = Object.entries(DOMAINS).reduce((acc, [code, label]) => {
@@ -190,7 +187,7 @@ export function mapSpecialityToFiliere(item) {
     domainLabel: item.domaine,
     domainCode: DOMAIN_LABEL_TO_CODE[item.domaine] ?? item.domaine,
     wilayaName: item.wilaya,
-    wilayaCode: WILAYA_NAME_TO_CODE[item.wilaya] ?? item.wilaya,
+    wilayaCode: getWilayaCodeByName(item.wilaya) ?? item.wilaya,
     minScore: item.min,
   };
 }

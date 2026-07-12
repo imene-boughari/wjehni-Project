@@ -6,7 +6,7 @@ import SpecialiteGrid from "../../components/SpecialiteGrid/SpecialiteGrid";
 import { ResetIcon, CapIcon } from "../../components/icons";
 import { fetcher } from "../../lib/fetcher";
 import { getSpecialitiesUrl } from "../../hooks/useSpecialities";
-import { buildApiFilters, mapSpecialityToFiliere } from "../../data/subjectsConfig";
+import { buildApiFilters, mapSpecialityToFiliere, FILIERE_BAC_LABELS } from "../../data/subjectsConfig";
 import jauneDoodle from "../../assets/images/Subtract-jaune.png";
 import bleuDoodle from "../../assets/images/Rectangle-bleu.png";
 import rougeDoodle from "../../assets/images/Rectangle.png";
@@ -29,6 +29,8 @@ export default function SpecialitesPage({
   notesEssentielles,
 }) {
   const [filters, setFilters] = useState(INITIAL_FILTERS);
+
+  const filiereLabel = FILIERE_BAC_LABELS[filiereKey] ?? "";
 
   const apiFilters = buildApiFilters(filiereKey, moyenneBac, notesEssentielles);
   const { data, error, isLoading } = useSWR(
@@ -86,7 +88,7 @@ export default function SpecialitesPage({
             <div className="specialites-page__heading">
               <h1>التخصصات المتاحة لك</h1>
               <p>
-                بناءً على شعبة العلوم التجريبية، ومعدلك الموزون التقريبي،
+                بناءً على شعبة {filiereLabel}، ومعدلك الموزون التقريبي،
                 ومعدلات القبول لسنة 2025، إليك التخصصات التي تناسبك. أخبرنا
                 باهتماماتك! اختر مجالًا من الفلاتر أدناه لنعرض لك فقط
                 التخصصات التي تندرج ضمن اهتماماتك من بين التخصصات المقترحة.
